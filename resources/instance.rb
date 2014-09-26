@@ -37,6 +37,8 @@ attribute :slowlog_max_len,                     :kind_of => Fixnum,             
 
 attribute :configure_maxmemory_samples,         :kind_of => [TrueClass, FalseClass], :default => false
 attribute :maxmemory_samples,                   :kind_of => Fixnum,                  :default => 3
+attribute :maxmemory_policy,                    :kind_of => String,                  :default => nil
+attribute :maxmemory,                           :kind_of => String,                  :default => nil
 
 attribute :configure_no_appendfsync_on_rewrite, :kind_of => [TrueClass, FalseClass], :default => false
 attribute :no_appendfsync_on_rewrite,           :kind_of => [TrueClass, FalseClass], :default => false
@@ -86,6 +88,8 @@ state_attrs(
  :slowlog_max_len,
 
  :maxmemory_samples,
+ :maxmemory_policy,
+ :maxmemory,
 
  :no_appendfsync_on_rewrite,
 
