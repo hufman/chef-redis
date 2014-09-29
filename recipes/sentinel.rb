@@ -9,6 +9,7 @@ redis_sentinel "sentinel" do
   group         node.redis.group
 
   node.redis.sentinel.each do |attribute, value|
+    next if attribute == 'can_failover' && node.redis.source.version.to_f >= 2.8
     send(attribute, value)
   end
 end
